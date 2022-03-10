@@ -1,0 +1,6 @@
+<h2>Follow User</h2>
+<% if @users.present? %>
+  <%= render 'follow', users: @users %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>
