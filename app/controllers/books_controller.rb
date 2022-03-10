@@ -4,6 +4,7 @@ class BooksController < ApplicationController
     @book = Book.new
     @books = Book.find(params[:id])
     @user = @books.user
+    impressionist(@books, nil, unique: [:ip_address])
     @book_comment = Bookcomment.new
 
   end
@@ -11,6 +12,7 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
+    @rank_books = Book.order(impressions_count: 'DESC')
   end
 
   def create

@@ -23,4 +23,5 @@ class Book < ApplicationRecord
   validates :title,presence:true
   validates :body,presence:true,length:{maximum:200}
   acts_as_taggable
+  is_impressionable counter_cache: true
 end
